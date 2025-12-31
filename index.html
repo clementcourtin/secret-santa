@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Santa - Carte Flip</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🎁 Secret Santa</h1>
+
+  <p class="hint">
+    Entrez les noms par groupe, séparés par des virgules.<br>
+    Les membres d'un groupe ne peuvent pas se piocher entre eux.<br>
+    Entrez entre parenthèses le nom de la personne piochée l'année précédente, le cas échéant.<br>
+  </p>
+
+  <div id="groups"></div>
+
+  <button id="addGroup" class="btn-primary">➕ Ajouter un groupe</button>
+  <button id="draw" class="btn-primary">🎲 Faire le tirage</button>
+
+  <div id="participants" class="hidden">
+    <h2>Tirage</h2>
+    <div id="participantList"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

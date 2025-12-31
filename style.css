@@ -1,0 +1,172 @@
+/* Base / reset */
+* {
+  box-sizing: border-box; /* inclut padding et bordure dans width/height */
+  -webkit-tap-highlight-color: transparent; /* supprime le surlignage bleu sur iOS */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  background: #f2f2f7;
+  margin: 0;
+  padding: 0;
+  color: #1c1c1e;
+  -webkit-font-smoothing: antialiased; /* rend le texte plus net sur iOS */
+}
+
+.container {
+  max-width: 450px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  font-weight: 600;
+}
+
+.hint {
+  font-size: 14px;
+  color: #6e6e73;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Group input style */
+.group {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d1d6;
+  outline: none;
+  transition: border 0.2s;
+  box-sizing: border-box; /* correction pour que le input reste dans le conteneur */
+  -webkit-appearance: none; /* uniformise les inputs sur iOS */
+}
+
+input:focus {
+  border-color: #007aff;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 15px;
+  font-size: 17px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent; /* supprime le surlignage sur iOS */
+}
+
+.btn-primary {
+  background: #007aff;
+  color: #fff;
+  margin-top: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+
+.btn-primary:hover {
+  background: #005ecb;
+}
+
+#participantList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Participant buttons with flip + fade */
+.participantBtn {
+  perspective: 1000px;
+  display: block;       /* chaque bouton occupe sa ligne */
+  width: 100%;
+  margin-bottom: 12px;  /* espacement vertical */
+  position: relative;
+  height: 50px;         /* hauteur fixe pour le flip */
+  font-size: 0;
+  cursor: pointer;
+  border: none;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.participantBtn .front,
+.participantBtn .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  font-size: 16px;
+  backface-visibility: hidden;
+  transition: transform 0.6s, opacity 0.6s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.participantBtn .front {
+  background: #34c759;
+  color: #fff;
+  opacity: 1;
+}
+
+.participantBtn .back {
+  background: #d1d1d6;
+  color: #1c1c1e;
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+/* flip toggle */
+.participantBtn.flipped .front {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+.participantBtn.flipped .back {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+/* Hidden class */
+.hidden {
+  display: none;
+}
+
+/* Bouton supprimer groupe */
+.deleteGroupBtn {
+  background: #ff3b30; /* rouge iOS */
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.deleteGroupBtn:hover {
+  background: #c1271d;
+}
+
+/* Ajustements iOS supplémentaires */
+button:active,
+input:active {
+  transform: scale(0.98); /* petit effet tactile */
+  transition: transform 0.1s;
+}
