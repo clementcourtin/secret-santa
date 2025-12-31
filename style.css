@@ -170,3 +170,11 @@ input:active {
   transform: scale(0.98); /* petit effet tactile */
   transition: transform 0.1s;
 }
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #6e6e73;
+}
+
+
