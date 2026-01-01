@@ -215,3 +215,6 @@ footer a:hover {
 .coffee-link:hover {
   text-decoration: underline;
 }
+* {
+  -webkit-tap-highlight-color: transparent;
+}
