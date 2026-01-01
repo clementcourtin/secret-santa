@@ -171,10 +171,47 @@ input:active {
   transition: transform 0.1s;
 }
 footer {
+  margin-top: 30px;
+  padding: 15px;
   text-align: center;
-  margin-top: 20px;
   font-size: 14px;
   color: #6e6e73;
 }
 
+footer a {
+  color: #6e6e73;
+  text-decoration: none;
+}
 
+footer a:hover {
+  text-decoration: underline;
+}
+
+#about {
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid #e5e5ea;
+  font-size: 15px;
+  color: #3a3a3c;
+}
+
+#about h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #1c1c1e;
+}
+
+#about p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.coffee-link {
+  margin-left: 6px;
+  font-weight: 500;
+  color: #007aff;
+  text-decoration: none;
+}
+
+.coffee-link:hover {
+  text-decoration: underline;
+}
